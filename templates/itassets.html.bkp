@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <title>IT Asset Management Tracker - JungleeGames</title>
+
+
+    <style type="text/css">
+        /*! CSS Used from: https://static.formstack.com/forms/css/3/reset_53bc1bb20a.css */
+.fsBody a,.fsBody fieldset,.fsBody form,.fsBody h2,.fsBody img,.fsBody label,.fsBody legend,.fsBody span{margin:0;padding:0;border:0;vertical-align:baseline;}
+.fsBody p{margin-top:0;padding:0;border:0;vertical-align:baseline;}
+.fsBody select{max-width:100%;}
+.fsSubmit input.fsSubmitButton{-webkit-appearance:none;-webkit-border-radius:0;}
+/*! CSS Used from: https://static.formstack.com/forms/css/3/jquery-ui_e641deecbe.css */
+.ui-helper-clearfix:after,.ui-helper-clearfix:before{content:"";display:table;}
+.ui-helper-clearfix:after{clear:both;}
+.ui-helper-clearfix{zoom:1;}
+.ui-widget{font-family:Verdana,Arial,sans-serif;font-size:1.1em;}
+.ui-widget-content{border:1px solid #aaa!important;background:#fff url(https://static.formstack.com/forms/images/3/jqueryui/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;color:#222;}
+.ui-corner-all{-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-khtml-border-top-left-radius:4px;border-top-left-radius:4px;}
+.ui-corner-all{-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px;-khtml-border-top-right-radius:4px;border-top-right-radius:4px;}
+.ui-corner-all{-moz-border-radius-bottomleft:4px;-webkit-border-bottom-left-radius:4px;-khtml-border-bottom-left-radius:4px;border-bottom-left-radius:4px;}
+.ui-corner-all{-moz-border-radius-bottomright:4px;-webkit-border-bottom-right-radius:4px;-khtml-border-bottom-right-radius:4px;border-bottom-right-radius:4px;}
+.ui-datepicker{width:17em;padding:.2em .2em 0;display:none;}
+/*! CSS Used from: https://static.formstack.com/forms/css/3/default-v4_1b81914771.css */
+.fsBody{-webkit-text-size-adjust:100%;margin:0;font-weight:400;font-style:normal;}
+.fsBody .fsForm{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.fsBody .fsPage{min-width:400px;}
+@media (max-width:40em){
+.fsBody{background-color:none!important;}
+}
+.fsBody .fsFieldRow,.fsBody .fsRowBody{padding:0;}
+.fsBody .fsSubField{float:left;}
+.fsBody .fsSubField:last-child{margin-right:0;}
+@media (max-width:40em){
+.fsBody{padding:0!important;}
+.fsBody .fsForm{margin:0!important;}
+.fsSubField{width:100%!important;}
+}
+.fsForm input,.fsForm select{-moz-transition:box-shadow .2s ease-in-out;-o-transition:box-shadow .2s ease-in-out;-webkit-transition:box-shadow .2s ease-in-out;transition:box-shadow .2s ease-in-out;}
+.fsForm input:focus,.fsForm select:focus{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;outline:0!important;}
+.fsForm ::-moz-focus-inner{border:0!important;outline:0!important;}
+.fsForm :not(textarea):-moz-focusring{color:transparent;}
+@media \0screen{
+.fsForm input:focus,.fsForm select:focus{position:relative;top:-2px!important;left:-2px!important;zoom:1;}
+}
+.hidden{position:absolute;left:-999em;width:.1em;height:.1em;overflow:hidden;}
+.clear{clear:both;}
+span.fsSlim{display:none;}
+span.fsFull{display:inherit;}
+@media only screen and (max-width:1024px){
+.fsBody img{max-width:100%;height:auto!important;}
+}
+.fsBody .fsLabel,.fsBody label{display:block;}
+.fsBody .fsLabelVertical .fieldset-content label{width:auto;}
+.fsBody .fsSupporting{margin-top:2px;clear:both;}
+.fsRowBody input[type=number],.fsRowBody input[type=text]{background-image:-webkit-gradient(linear,0 0,0 100%,from(rgba(255,255,255,0)),to(rgba(255,255,255,0)));background-image:-webkit-linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0));}
+.fsForm select,.fsRowBody input[type=number],.fsRowBody input[type=text]{width:100%;max-width:100%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-weight:400;}
+.fsForm select::-webkit-input-placeholder,.fsRowBody input[type=number]::-webkit-input-placeholder,.fsRowBody input[type=text]::-webkit-input-placeholder{line-height:normal;}
+.fsForm select:-moz-placeholder,.fsRowBody input[type=number]:-moz-placeholder,.fsRowBody input[type=text]:-moz-placeholder{line-height:normal;}
+.fsForm select::-ms-input-placeholder,.fsRowBody input[type=number]::-ms-input-placeholder,.fsRowBody input[type=text]::-ms-input-placeholder{line-height:normal;}
+.fsForm select{-moz-appearance:none;-webkit-appearance:none;padding-top:.5em;padding-bottom:.5em;}
+.fsForm select:not([multiple=multiple]){-moz-background-size:.5em;-o-background-size:.5em;-webkit-background-size:.5em;background-size:.5em;background-repeat:no-repeat;}
+@media all and (device-width:768px) and (device-height:1024px) and (orientation:portrait),all and (device-width:768px) and (device-height:1024px) and (orientation:landscape){
+select{margin-top:0;margin-bottom:0;}
+}
+.fsSubFieldGroup .fsNameFirst,.fsSubFieldGroup .fsNameLast{width:40%;}
+.fsSubFieldGroup .fsSubField:nth-child(1):nth-last-child(2).fsNameFirst{width:45%;}
+.fsSubFieldGroup .fsSubField:nth-child(2):nth-last-child(1).fsNameLast{width:50%;}
+.fsCurrency{float:left;display:inline-block;width:4%;text-align:right;}
+.fsCurrency.fsCurrencySuffix{float:right;text-align:left;}
+.fsCurrency~input.fsField{width:91%!important;}
+.fsBody .fieldset-content select{width:auto;}
+.fsBody .fieldset-content .ui-datepicker-trigger,.fsBody .fieldset-content select{float:left;}
+.fsBody .fieldset-content select>*{float:left;}
+.fsBody .fieldset-content select:last-of-type{margin-right:0;}
+.fsBody .ui-datepicker-trigger{position:relative;width:18px;height:18px;cursor:pointer;}
+.fsborderradius .fsBody .fsSectionHeader{margin:0;}
+.fsForm.fsMaxCol1{width:700px;}
+.fsFieldRow .fsFieldCell{margin:0 2%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.fsFieldRow .fsFieldCell:nth-child(1){margin-left:0;}
+.fsFieldRow .fsFieldCell.fsSpan100{margin:0;}
+.fsFirst.fsLast.fsFieldCell{float:none;}
+.fsForm .fsSubmit{clear:left;background-color:transparent;}
+.fsSubmitButton{margin:0 auto;clear:both;}
+.fsPagination{text-align:center;}
+.fsPagination .fsNextButton{float:right;}
+.fsPagination .fsPreviousButton{float:left;}
+.fsPagination .fsNextButton,.fsPagination .fsPreviousButton,.fsPagination .fsSubmitButton{cursor:pointer;}
+@media all and (max-width:699px),all and (device-height:1024px) and (device-width:768px) and (orientation:portrait),all and (device-height:1024px) and (device-width:768px) and (orientation:landscape){
+span.fsFull{display:none;}
+.fsBody .fsForm,.fsBody .fsPage{min-width:inherit;width:100%;}
+.fsPagination .fsSubmitButton{display:inline-block;width:100%;}
+.fsPagination .fsNextButton,.fsPagination .fsPreviousButton{width:50px;height:50px;padding:0;-moz-border-radius:50%!important;-webkit-border-radius:50%;border-radius:50%!important;user-select:none;}
+.fsPagination .fsSlim{display:none;}
+.fsPagination .fsNextButton:before,.fsPagination .fsPreviousButton:before{display:block;text-indent:0;font-size:1.5em;line-height:0;}
+.fsPagination .fsNextButton:before{content:'\21E8';}
+.fsPagination .fsPreviousButton:before{content:'\21E6';}
+}
+/*! CSS Used from: https://static.formstack.com/common/css/uil-static.css */
+.fs-btn2{display:inline-block;border:0;font-weight:700!important;cursor:pointer;text-decoration:none;letter-spacing:0.2px;outline:none;position:relative;white-space:nowrap;overflow:hidden;text-align:center;vertical-align:bottom;-webkit-font-smoothing:antialiased;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-user-select:-moz-none;-ms-user-select:none;-webkit-user-select:none;user-select:none;-moz-transition:background .3s ease-in-out,color .3s ease-in-out;-o-transition:background .3s ease-in-out,color .3s ease-in-out;-webkit-transition:background .3s ease-in-out,color .3s ease-in-out;transition:background .3s ease-in-out,color .3s ease-in-out;}
+.fs-btn2 .fs-btn2__content{margin:0 auto;display:inline-block;}
+.fs-btn2 .fs-btn2__text{float:left;display:block;position:relative;z-index:4;margin:0;}
+.fs-btn2 *,.fs-btn2 *:before,.fs-btn2 *:after{box-sizing:border-box;}
+.fs-btn2:focus{outline:none;}
+.fs-btn2:hover,.fs-btn2:focus{text-decoration:none;}
+.fs-btn2.fs-btn2--style_create{background:#227A90;color:#fff;}
+.fs-btn2.fs-btn2--style_create:hover{background:#1d697b;}
+.fs-btn2.fs-btn2--style_edit-dark{background:#EDEFF0;color:#455560;}
+.fs-btn2.fs-btn2--style_edit-dark:hover{background:#dfe3e4;}
+.fs-btn2.fs-btn2--size_medium{font-size:12px;height:30px;line-height:30px;padding:0 18px;}
+.fs-btn2.fs-btn2--size_medium .fs-btn2__text{height:30px;}
+.fs-ngdialog{position:fixed;overflow:auto;-webkit-overflow-scrolling:touch;z-index:256;top:0;right:0;bottom:0;left:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.fs-ngdialog .fs-ngdialog-overlay{filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#40000000, endColorstr=#40000000);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#40000000, endColorstr=#40000000)";position:fixed;background:rgba(0,0,0,0.4);top:0;right:0;bottom:0;left:0;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-moz-animation:fs-ngdialog-fadein 0.5s;-webkit-animation:fs-ngdialog-fadein 0.5s;animation:fs-ngdialog-fadein 0.5s;-moz-animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
+.fs-ngdialog .fs-ngdialog-content{background:white;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-moz-animation:fs-ngdialog-fadein 0.5s;-webkit-animation:fs-ngdialog-fadein 0.5s;animation:fs-ngdialog-fadein 0.5s;-moz-animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-moz-transition:height .4s;-o-transition:height .4s;-webkit-transition:height .4s;transition:height .4s;}
+.fs-ngdialog .fs-ngdialog-content>*{-webkit-transform:translateZ(0);-moz-transition:opacity .25s ease-in-out;-o-transition:opacity .25s ease-in-out;-webkit-transition:opacity .25s ease-in-out;transition:opacity .25s ease-in-out;}
+.fs-modal-medium .fs-ngdialog-content{-moz-animation:fs-ngdialog-flyin 0.5s;-webkit-animation:fs-ngdialog-flyin 0.5s;animation:fs-ngdialog-flyin 0.5s;-moz-animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;margin:0 auto;max-width:100%;position:relative;-moz-box-shadow:0px 15px 13px 0px rgba(0,0,0,0.15);-webkit-box-shadow:0px 15px 13px 0px rgba(0,0,0,0.15);box-shadow:0px 15px 13px 0px rgba(0,0,0,0.15);-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
+.fs-modal-medium .fs-ngdialog-content .fs-modal__top{font-size:14px;padding:13px;color:#6C7A85;letter-spacing:0.4px;}
+.fs-modal-medium .fs-ngdialog-content .fs-modal__middle{overflow-x:auto;position:relative;border-top:1px solid #CFD4D8;border-bottom:1px solid #CFD4D8;}
+.fs-modal-medium .fs-ngdialog-content .fs-modal__bottom{padding:7px;}
+.fs-modal-medium .fs-ngdialog-content{width:685px;background:#fff;}
+.fs-modal-medium .fs-ngdialog-content .fs-modal__middle{background:#EDEFF0;}
+.fs-modal-medium .fs-ngdialog-content .fs-modal__middle{max-height:550px;}
+@media (max-width: 568px){
+.fs-modal-medium{-moz-animation:none;-webkit-animation:none;animation:none;}
+}
+@media (max-height: 800px){
+.fs-modal-medium{padding-bottom:20px;padding-top:20px;}
+}
+@media (min-height: 800px){
+.fs-modal-medium{padding-bottom:100px;padding-top:100px;}
+}
+.fs-form-input{display:inline-block;box-sizing:border-box;background:#fff;border:1px solid #CFD4D8;color:#455560;font-size:12px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;letter-spacing:0.1px;outline:0;max-width:100%;font-size:12px;height:30px;line-height:30px;padding:0 13px;width:100%;}
+.fs-form-input:focus{border-color:#6C7A85;}
+.fs--mt20{margin-top:20px!important;}
+.fs--float-right{float:right;}
+/*! CSS Used from: https://static.formstack.com/forms/css/common/dialogs_68abb2e62a.css */
+.fs-form-dialog .fs-modal__middle{padding:20px;color:#595D64;}
+.fs-form-dialog .fs-modal__bottom{padding:10px 20px!important;}
+.fs-form-dialog--hidden{display:none;opacity:0;}
+/*! CSS Used from: Embedded */
+body{background-color:#ffffff;}
+.fsBody{font-family:global_font_string;color:#595d64;}
+.fsBody input{font-family:global_font_string;}
+.wf-active .fsBody,.wf-active .fsBody input{font-family:'Lato', global_font_string;}
+.fsBody .fsForm{float:center;border:0 solid transparent;background-color:#ffffff;background-color:rgba(255,255,255, 1);}
+.fsborderradius .fsBody .fsForm{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;}
+.fsBody{padding:20px;}
+.fsBody .fsForm{margin:20px auto;padding:20px;}
+.fsBody .fsFieldRow{margin-bottom:20px!important;}
+.fsBody .fsRowBody{margin-bottom:20px!important;}
+.fsBody .fsSubField{margin-right:10px;}
+@media (max-width: 40em){
+.fsRow.fsFieldRow.fsLastRow{margin-bottom:20px;}
+.fsSubFieldGroup .fsSubField:not(:last-child){margin-bottom:10px;}
+}
+.fsRequiredMarker{margin-left:2.5px!important;font-size:16px;color:#595d64;}
+.fsForm input:focus,.fsForm select:focus{border-color:#cfd4d8;-moz-box-shadow:0 0 5px rgba(89, 93, 100, 0.75);-webkit-box-shadow:0 0 5px rgba(89, 93, 100, 0.75);box-shadow:0 0 5px rgba(89, 93, 100, 0.75);}
+.fsForm :-moz-focusring{text-shadow:0 0 0 #595d64;}
+@media \0screen{
+.fsForm input:focus,.fsForm select:focus{filter:progid:DXImageTransform.Microsoft.Shadow(Color=#595d64, Strength=2, Direction=0) progid:DXImageTransform.Microsoft.Shadow(Color=#595d64, Strength=2, Direction=90) progid:DXImageTransform.Microsoft.Shadow(Color=#595d64, Strength=2, Direction=180) progid:DXImageTransform.Microsoft.Shadow(Color=#595d64, Strength=2, Direction=270);}
+}
+.fsBody .fsLabel,.fsBody label{font-size:16px;color:#595d64;}
+.fsLabelVertical .fsLabel{margin-bottom:10px;}
+.fsBody .fsSupporting{font-size:12px;font-weight:400;font-style:normal;line-height:12px;color:#595d64;}
+.fsRowBody input[type="text"],.fsRowBody input[type="number"]{border:1px solid #cfd4d8;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;background-color:#ffffff;-moz-transition-property:color, background-color, border, border-color, box-shadow;-o-transition-property:color, background-color, border, border-color, box-shadow;-webkit-transition-property:color, background-color, border, border-color, box-shadow;transition-property:color, background-color, border, border-color, box-shadow;-moz-transition-duration:0s;-o-transition-duration:0s;-webkit-transition-duration:0s;transition-duration:0s;-moz-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;}
+.fsRowBody input[type="text"],.fsRowBody input[type="number"],.fsForm select{height:42px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.fsRowBody input[type="text"],.fsRowBody input[type="number"],.fsForm select{padding:7px;font-size:14px;font-weight:400;font-style:normal;line-height:14px;color:#595d64;}
+.fsForm select.fsRequired{border:1px solid #cfd4d8;background-color:#ffffff;}
+.fsCell{-moz-transition-property:padding, box-shadow, background-color, margin-left, margin-right;-o-transition-property:padding, box-shadow, background-color, margin-left, margin-right;-webkit-transition-property:padding, box-shadow, background-color, margin-left, margin-right;transition-property:padding, box-shadow, background-color, margin-left, margin-right;-moz-transition-duration:0s;-o-transition-duration:0s;-webkit-transition-duration:0s;transition-duration:0s;-moz-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;}
+.fsForm select{padding-right:calc(14px);padding-left:calc(7px);border:1px solid #cfd4d8;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;color:#595d64;background-color:#ffffff;-moz-transition-property:color, background-color, border, border-color;-o-transition-property:color, background-color, border, border-color;-webkit-transition-property:color, background-color, border, border-color;transition-property:color, background-color, border, border-color;-moz-transition-duration:0s;-o-transition-duration:0s;-webkit-transition-duration:0s;transition-duration:0s;-moz-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;}
+.fsForm select:not([multiple="multiple"]){padding-right:calc(28px);background-image:url(data:image/svg+xml;utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%201805.18%22%3E%3Cpath%20fill%3D%22%23595d64%22%20d%3D%22M461.6%2C643.4L10.9%2C79.9C-14.9%2C47.7%2C8%2C0%2C49.3%2C0h901.5c41.2%2C0%2C64.1%2C47.7%2C38.4%2C79.9L538.4%2C643.4%09C518.7%2C668%2C481.3%2C668%2C461.6%2C643.4z%22%20transform%3D%22rotate%28180%20500%20902.59%29%20translate%280%201143.28%29%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%23595d64%22%20d%3D%22M461.6%2C643.4L10.9%2C79.9C-14.9%2C47.7%2C8%2C0%2C49.3%2C0h901.5c41.2%2C0%2C64.1%2C47.7%2C38.4%2C79.9L538.4%2C643.4%09C518.7%2C668%2C481.3%2C668%2C461.6%2C643.4z%22%20transform%3D%22translate%280%201143.28%29%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);background-position:right 7px top 50%;}
+@media screen\0 {
+.fsForm select{padding-right:calc(14px)!important;}
+}
+.fsSubFieldGroup .fsSubField:nth-child(1):nth-last-child(2).fsNameFirst{width:calc(50% - 10px);}
+.fsCurrency{margin-right:5px!important;font-size:14px;line-height:32px;color:#595d64;}
+.fsCurrency.fsCurrencySuffix{margin-right:0!important;margin-left:5px!important;}
+.fsCurrency ~ input.fsField{width:calc(96% - 5px)!important;}
+.fsBody .fieldset-content select{margin-right:10px;}
+.fsBody .fieldset-content span{right:5px;}
+.fsBody .ui-datepicker-trigger{top:8px;margin-left:10px;}
+.fsBody .fsSectionHeader{background-color:#edeff0;}
+.fsBody .fsForm .fsSectionHeading{margin-bottom:10px;text-align:center;font-size:28px;font-weight:400;font-style:normal;line-height:28px;color:#000000;}
+.fsborderradius .fsBody .fsSectionHeader{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;}
+.fsborderradius .fsBody .fsSectionHeader{margin-bottom:40px;}
+.fsBody .fsSectionHeader{padding:20px;}
+.fsForm .fsSubmit{margin-top:40px;padding:20px 0;}
+.fsPreviousButton,.fsSubmitButton,.fsNextButton{padding:10px 10px;border:0 solid transparent;-moz-border-radius:0!important;-webkit-border-radius:0;border-radius:0!important;font-size:14px!important;font-weight:400;font-style:normal;line-height:14px;color:#ffffff!important;background-color:#595d64!important;}
+@media all and (max-width: 699px), all and (device-height: 1024px) and (device-width: 768px) and (orientation: portrait), all and (device-height: 1024px) and (device-width: 768px) and (orientation: landscape){
+.fsPagination .fsNextButton,.fsPagination .fsPreviousButton{background-color:#595d64;}
+}
+/*! CSS Used keyframes */
+@-moz-keyframes fs-ngdialog-fadein{0%{opacity:0;}100%{opacity:1;}}
+@-webkit-keyframes fs-ngdialog-fadein{0%{opacity:0;}100%{opacity:1;}}
+@keyframes fs-ngdialog-fadein{0%{opacity:0;}100%{opacity:1;}}
+@-moz-keyframes fs-ngdialog-flyin{0%{-moz-transform:scale(0.7);transform:scale(0.7);-moz-transition:all .3s;transition:all .3s;opacity:0;}100%{-moz-transform:scale(1);transform:scale(1);opacity:1;}}
+@-webkit-keyframes fs-ngdialog-flyin{0%{-webkit-transform:scale(0.7);transform:scale(0.7);-webkit-transition:all .3s;transition:all .3s;opacity:0;}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1;}}
+@keyframes fs-ngdialog-flyin{0%{-moz-transform:scale(0.7);-ms-transform:scale(0.7);-webkit-transform:scale(0.7);transform:scale(0.7);-moz-transition:all .3s;-o-transition:all .3s;-webkit-transition:all .3s;transition:all .3s;opacity:0;}100%{-moz-transform:scale(1);-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);opacity:1;}}
+/*! CSS Used fontfaces */
+@font-face{font-family:'Lato';font-style:normal;font-weight:400;src:local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Lato';font-style:normal;font-weight:400;src:local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Lato';font-style:normal;font-weight:700;src:local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Lato';font-style:normal;font-weight:700;src:local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+    </style>
+
+        <style type="text/css">
+        .fsBody .fsForm .fsMatrix th, .fsBody .fsForm .fsMatrixLabel {text-align: center;}
+    </style>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true,
+      buttonText: "Select date"
+    });
+  } );
+  </script>
+
+    </head>
+
+<body id="fsLocal" class="fsBody">
+    
+    
+    
+
+
+
+
+
+<form method="post" novalidate="" action="http://localhost:5000/result" class="fsForm fsSingleColumn fsMaxCol1" id="fsForm3283445">
+
+        
+            
+                                        
+                                                
+            <div class="fsSection fs1Col" id="fsSection71909275">
+
+            
+                                        
+                                        
+            <div class="fsSectionHeader">
+            <h2 class="fsSectionHeading">IT Asset Management Form</h2>
+        
+            <div class="fsSectionText"><p>Utilize this form for hardware inventory &amp; asset management to ensure you're keeping track of all your valuable equipment.
+</p></div>
+    </div>
+
+
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-2" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+            <br>            
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909276" lang="en" fs-field-type="select" fs-field-validation-name="Asset Category">
+                                                                        <label id="label71909276" class="fsLabel" for="field71909276">Asset Category                                            </label>
+                                    
+                
+                
+                <select id="field71909276" name="assetCategory" size="1" class="fsField">
+
+        <option value="Building Key/Keycard">Building Key/Keycard</option>
+        <option value="Cell Phone">Cell Phone</option>
+        <option value="Desktop Computer">Desktop Computer</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Keyboard">Keyboard</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Monitor">Monitor</option>
+        <option value="Printer">Printer</option>
+        <option value="Fax Machine">Fax Machine</option>
+        <option value="Hotspot">Hotspot</option>
+
+</select>
+
+
+                                                    
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-3" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909277" lang="en" fs-field-type="name" fs-field-validation-name="Asset Owner EmailId">
+                                                    <span id="label71909277" class="fsLabel">Asset Owner EmailId</span>
+                
+                
+                
+                <div class="fsSubFieldGroup">
+
+    
+            <input type="text" id="field71909277" name="assetOwnerEmailId" size="50" value="" class="fsField">
+
+    
+</div>
+<div class="clear"></div>
+
+
+                
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-4" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909278" lang="en" fs-field-type="text" fs-field-validation-name="Asset Description">
+                                                                        <label id="label71909278" class="fsLabel" for="field71909278">Asset Description                                            </label>
+                                    
+                
+                
+                <input type="text" id="field71909278" name="assetDescription" size="50" value="" class="fsField">
+
+
+
+                                                    
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-5" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909279" lang="en" fs-field-type="text" fs-field-validation-name="Serial #">
+                                                                        <label id="label71909279" class="fsLabel" for="field71909279">Serial #                                            </label>
+                                    
+                
+                
+                <input type="text" id="field71909279" name="serialNo" size="50" value="" class="fsField">
+
+
+
+                                                    
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-6" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909280" lang="en" fs-field-type="text" fs-field-validation-name="Model #">
+                                                                        <label id="label71909280" class="fsLabel" for="field71909280">Model #                                            </label>
+                                    
+                
+                
+                <input type="text" id="field71909280" name="modelNo" size="50" value="" class="fsField">
+
+
+
+                                                    
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-7" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909281" lang="en" fs-field-type="number" fs-field-validation-name="Asset Cost">
+                                                                        <label id="label71909281" class="fsLabel" for="field71909281">Asset Cost                                            </label>
+                                    
+                
+                
+                                        <span class="fsCurrency fsCurrencyPrefix">$</span>
+            
+    <input type="number" step="any" id="field71909281" name="assetCost" class="fsField fsFormatNumber fsNumberDecimals-2">
+
+                        <span class="fsCurrency fsCurrencySuffix"></span>
+            
+
+                                                    
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-8" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909282" lang="en" fs-field-type="datetime" fs-field-validation-name="Date Purchased">
+                                                    <fieldset id="label71909282">
+
+                        <legend class="fsLabel fsRequiredLabel fsLabelVertical"><span>Date Purchased<span class="fsRequiredMarker">*</span></span></legend>
+                        <div class="fieldset-content">
+                
+                
+                
+                            <!-- Used to pull in url for jquery -->
+        <span style="display:none;" id="fsCalendar71909282ImageUrl">/static/img/calendar.png</span>
+
+    
+    
+                    <div class="hidden"><label for="field71909282M">Month</label></div>
+        <select id="field71909282M" name="monthPurchased" class=" fsField fsRequired" aria-required="true">
+                    <option value=""> </option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                </select>
+             <div class="hidden"><label for="field71909282D">Day</label></div>
+        <select id="field71909282D" name="datePurchased" class=" fsField fsRequired" aria-required="true">
+                    <option value=""> </option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+             <div class="hidden"><label for="field71909282Y">Year</label></div>
+        <select id="field71909282Y" name="yearPurchased" class=" fsField fsRequired" aria-required="true">
+                    <option value=""> </option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+    
+    
+    
+    <input data-skip-validation="" type="text" id="fsCalendar71909282Link" class="fsCalendarPickerLink hasDatepicker" style="display:none;" aria-hidden="true"><img class="ui-datepicker-trigger" src="/static/img/calendar.png" alt="Select Date" title="Select Date">
+
+        <div id="fsCalendar71909282" class="fsCalendar" style=" position:absolute"></div>
+        
+
+
+                                                    
+                
+                                        </div></fieldset>
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-9" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909283" lang="en" fs-field-type="datetime" fs-field-validation-name="Date Loaned">
+                                                    <fieldset id="label71909283">
+
+                        <legend class="fsLabel fsRequiredLabel fsLabelVertical"><span>Date Loaned<span class="fsRequiredMarker">*</span></span></legend>
+                        <div class="fieldset-content">
+                
+                
+                
+                            <!-- Used to pull in url for jquery -->
+        <span style="display:none;" id="fsCalendar71909283ImageUrl">/static/img/calendar.png</span>
+
+    
+                    <div class="hidden"><label for="field71909283M">Month</label></div>
+        <select id="field71909283M" name="monthLoaned" class=" fsField fsRequired" aria-required="true">
+                    <option value=""> </option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                </select>
+             <div class="hidden"><label for="field71909283D">Day</label></div>
+        <select id="field71909283D" name="dateLoaned" class=" fsField fsRequired" aria-required="true">
+                    <option value=""> </option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+             <div class="hidden"><label for="field71909283Y">Year</label></div>
+        <select id="field71909283Y" name="yearLoaned" class=" fsField fsRequired" aria-required="true">
+                    <option value=""> </option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+    
+    
+    
+    <input data-skip-validation="" type="text" id="fsCalendar71909283Link" class="fsCalendarPickerLink hasDatepicker" style="display: none;" aria-hidden="true"><img class="ui-datepicker-trigger" src="/static/img/calendar.png" alt="Select Date" title="Select Date">
+
+        <div id="fsCalendar71909283" class="fsCalendar" style=" position:absolute"></div>
+        
+
+
+                                                    
+                
+                                        </div></fieldset>
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-10" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909284" lang="en" fs-field-type="text" fs-field-validation-name="Condition">
+                                                                        <label id="label71909284" class="fsLabel" for="field71909284">Condition                                            </label>
+                                    
+                
+                
+                <input type="text" id="field71909284" name="condition" size="50" value="" class="fsField">
+
+
+
+                                                    
+                
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+        
+        
+        
+                        
+            
+            
+                                        
+                                        
+                                        
+            
+                                                
+                <div id="fsRow3283445-11" class="fsRow fsFieldRow fsLastRow">
+
+            
+                                        
+            
+            
+            
+                                        
+                        
+            <div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsSpan100" id="fsCell71909285" lang="en" fs-field-type="datetime" fs-field-validation-name="Warranty Expiration">
+                                                    <fieldset id="label71909285">
+
+                        <legend class="fsLabel fsLabelVertical"><span>Warranty Expiration</span></legend>
+                        <div class="fieldset-content">
+                
+                
+                
+                            <!-- Used to pull in url for jquery -->
+        <span style="display:none;" id="fsCalendar71909285ImageUrl">/static/img/calendar.png</span>
+
+    
+                    <div class="hidden"><label for="field71909285M">Month</label></div>
+        <select id="field71909285M" name="warrantyExpMonth" class=" fsField">
+                    <option value=""> </option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                </select>
+             <div class="hidden"><label for="field71909285D">Day</label></div>
+        <select id="field71909285D" name="warrantyExpDate" class=" fsField">
+                    <option value=""> </option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+             <div class="hidden"><label for="field71909285Y">Year</label></div>
+        <select id="field71909285Y" name="warrantyExpYear" class=" fsField">
+                    <option value=""> </option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+    
+    
+    
+    <input data-skip-validation="" type="text" id="fsCalendar71909285Link" class="fsCalendarPickerLink hasDatepicker" style="display: none;" aria-hidden="true"><img class="ui-datepicker-trigger" src="/static/img/calendar.png" alt="Select Date" title="Select Date">
+
+        <div id="fsCalendar71909285" class="fsCalendar" style=" position:absolute"></div>
+        
+
+
+                                                    
+                
+                                        </div></fieldset>
+                
+                
+                
+            </div>
+
+                                    </div>
+            
+        
+    
+
+        
+    </div>
+
+    
+    
+</div>
+
+
+<div id="fsSubmit3283445" class="fsSubmit fsPagination">
+
+    
+    <button type="button" id="fsPreviousButton3283445" class="fsPreviousButton" value="Previous Page" style="display:none;" aria-label="Previous"><span class="fsFull">Previous</span><span class="fsSlim">←</span></button>
+    <button type="button" id="fsNextButton3283445" class="fsNextButton" value="Next Page" style="display:none;" aria-label="Next"><span class="fsFull">Next</span><span class="fsSlim">→</span></button>
+
+    <input id="fsSubmitButton3283445" class="fsSubmitButton" style="" type="submit" value="Submit Form">
+
+    
+    
+    <div class="clear"></div>
+
+</div>
+
+
+
+
+    <div style="clear:both"></div>
+
+</form>
+
+
+
+
+    
+    
+
+
+
+</body>
+</html>
