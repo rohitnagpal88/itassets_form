@@ -10,18 +10,14 @@ async def run(loop):
 
     # Start session with NATS Streaming cluster.
     sc = STAN()
-    await sc.connect("test-cluster", "client-123", nats=nc)
+    await sc.connect("test-cluster", "client-4", nats=nc)
 
-    sub = await sc.subscribe("hi", start_at='first', cb=cb)
-    await asyncio.wait_for(future, 1, loop=loop)
+    await sc.publish("hi", b'hello')
+    await sc.publish("hi", b'world')
 
-    # Stop receiving messages
-    await sub.unsubscribe()
+    #await asyncio.sleep(1, loop=loop)
 
-    # Close NATS Streaming session
     await sc.close()
-
-    # We are using a NATS borrowed connection so we need to close manually.
     await nc.close()
 
 

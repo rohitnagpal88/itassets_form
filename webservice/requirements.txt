@@ -1,0 +1,8 @@
+flask
+cassandra-driver
+uuid
+datetime
+redis
+asyncio
+asyncio-nats-client
+asyncio-nats-streaming

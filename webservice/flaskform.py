@@ -1,19 +1,54 @@
 from flask import Flask, render_template, request
 from cassandra.cluster import Cluster
 from cassandra.query import dict_factory
+import os
 import uuid
 import signal
 import sys
 import datetime
 import json
 import redis
+import asyncio
+from nats.aio.client import Client as NATS
+from stan.aio.client import Client as STAN
 
-cluster = Cluster()
-session = cluster.connect('testcluster')
+cassandra_hosts = os.environ['CASSANDRA_HOSTS']
+cassandra_port = os.environ['CASSANDRA_PORT']
+cassandra_keyspace = os.environ['CASSANDRA_KEYSPACE']
+redis_host = os.environ['REDIS_HOST']
+redis_port = os.environ['REDIS_PORT']
+nats_hostport = os.environ['NATS_HOSTPORT']
+
+cluster = Cluster(cassandra_hosts,port=cassandra_port)
+session = cluster.connect(cassandra_keyspace)
 session.row_factory = dict_factory
 asset_lookup_stmt = session.prepare("SELECT json * FROM asset WHERE asset_owner_emailid=?")
 
 r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+
+
+loop = asyncio.get_event_loop()
+#nc = NATS()
+#sc = STAN()
+
+async def disconnected_cb():
+	print("Got disconnected!")
+
+async def reconnected_cb():
+	# See who we are connected to on reconnect.
+	print("Got reconnected to {url}".format(url=nc.connected_url.netloc))
+
+#async def initconnect(loop):
+#	await nc.connect(io_loop=loop,max_reconnect_attempts=10,reconnected_cb=reconnected_cb,disconnected_cb=disconnected_cb,)	
+#	await sc.connect("test-cluster", "client-pub", nats=nc)
+
+
+#loop.run_until_complete(initconnect(loop))
+
+#async def closeconnect(loop):
+#	await sc.close()
+#	await nc.close()
+
 
 app = Flask(__name__,static_url_path='/static')
 
@@ -21,6 +56,8 @@ app = Flask(__name__,static_url_path='/static')
 def signalHandler(signum, frame):
     print("Ctrl-C pressed..closing connection to cassandra before shutting down..")
     cluster.shutdown()
+    #loop.run_until_complete(closeconnect(loop))
+    loop.close()
     sys.exit(0)
 
 
@@ -32,8 +69,9 @@ def assetform():
 def result():
 	if request.method == 'POST':
 		result = request.form.to_dict()
-		insertasset(result)
+		#insertasset(result)
 		print(result)
+		loop.run_until_complete(run(loop,result))
 		return render_template("result.html",result = result)
 
 
@@ -85,6 +123,29 @@ def updatecache(emp,empassets):
 			empassets.append(results)
 		empassets = json.dumps(empassets,indent=4,sort_keys=True)
 	r.set(emp,empassets)
+
+
+async def run(loop,result):
+    # Use borrowed connection for NATS then mount NATS Streaming
+    # client on top.
+    nc = NATS()
+    await nc.connect(nats_hostport,io_loop=loop,max_reconnect_attempts=10,reconnected_cb=reconnected_cb,disconnected_cb=disconnected_cb,)
+
+    # Start session with NATS Streaming cluster.
+    sc = STAN()
+    await sc.connect("test-cluster", "client-pub", nats=nc)
+    print(result)
+    r = json.dumps(result).encode('utf-8')
+    print(r)
+    print(type(r))
+    await sc.publish("hi",r)
+    #await sc.publish("hi", b'world')
+
+    #await asyncio.sleep(1, loop=loop)
+
+    await sc.close()
+    await nc.close()
+
 
 
 if __name__ == '__main__':

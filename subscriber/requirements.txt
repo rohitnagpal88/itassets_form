@@ -1,0 +1,6 @@
+asyncio
+futures
+cassandra-driver
+uuid
+datetime
+redis
